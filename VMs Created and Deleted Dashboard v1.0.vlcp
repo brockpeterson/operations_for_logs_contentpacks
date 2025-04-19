@@ -1,0 +1,133 @@
+{
+  "name":"VMs Created and Deleted Dashboard",
+  "namespace":"com.broadcom.logs",
+  "contentPackId":"com.broadcom.logs",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"vmw_vc_task_type",
+    "preContext":"task: ",
+    "postContext":"$",
+    "regexValue":".*",
+    "internalName":"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\",\"fieldType\":\"NUMBER\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"VMs Created and Deleted",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"VMs Created and Deleted Over Time",
+          "info":"",
+          "gridWidth":"1",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1735711200000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"virtual machine\"},{\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"migrate,reconfigure,relocate,reset,hard stop,rename,snapshot,power,clone,consolidate\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.vim25.TaskEvent\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_task_type\",\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VMs Created",
+          "info":"IMPORTANT:&nbsp;This widget requires&nbsp;<a href=\"/admin/vsphere\">vSphere integration</a>&nbsp;and more specifically the collection of vCenter Server events, task, and alarms to display any results.<br><br>The number of VMs that have been deleted as recorded by vCenter Server. You can add a group by for the vc_vm_name to determine which VMs have been deleted or a group by for vc_username to see which user(s) has deleted at least one VM.",
+          "chartType":"scalar-value",
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1728652345530,\"endTimeMillis\":1745012432431,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"create virtual machine\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"create virtual machine snapshot\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs deleted",
+          "info":"IMPORTANT:&nbsp;This widget requires&nbsp;<a href=\"/admin/vsphere\">vSphere integration</a>&nbsp;and more specifically the collection of vCenter Server events, task, and alarms to display any results.<br><br>The number of VMs that have been deleted as recorded by vCenter Server. You can add a group by for the vc_vm_name to determine which VMs have been deleted or a group by for vc_username to see which user(s) has deleted at least one VM.<br>",
+          "chartType":"scalar-value",
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"0\",\"1000\",\"2000\",\"5000\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1641802094163,\"endTimeMillis\":1641802094163,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"delete virtual machine*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VMs Created",
+          "info":"",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1735711200000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"create virtual machine\"},{\"internalName\":\"text\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"create virtual machine snapshot\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_task_type\",\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_timestamp_col",
+            "displayName":"__li_timestamp_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"__li_msg_col",
+            "displayName":"__li_msg_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"vmw_vcenter",
+            "displayName":"vmw_vcenter",
+            "displayNamespace":null
+          }, {
+            "internalName":"vmw_cluster",
+            "displayName":"vmw_cluster",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_username",
+            "displayName":"vc_username",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_event_desc",
+            "displayName":"vc_event_desc",
+            "displayNamespace":null
+          } ]
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"Deleted VMs",
+          "info":"",
+          "gridWidth":"1",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1738389600000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"delete virtual machine*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcn27mnxw2ltcojxwczddn5ws43dpm5zxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_timestamp_col",
+            "displayName":"__li_timestamp_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"__li_msg_col",
+            "displayName":"__li_msg_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"vmw_vcenter",
+            "displayName":"vmw_vcenter",
+            "displayNamespace":null
+          }, {
+            "internalName":"vmw_cluster",
+            "displayName":"vmw_cluster",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_username",
+            "displayName":"vc_username",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_event_desc",
+            "displayName":"vc_event_desc",
+            "displayNamespace":null
+          } ]
+        } ]
+      } ],
+      "itemUuid":"7f13894d-a50a-3e2f-9f97-435d28992415"
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"Brock Peterson",
+  "url":"https://www.brockpeterson.com",
+  "contentVersion":"1.0"
+}
