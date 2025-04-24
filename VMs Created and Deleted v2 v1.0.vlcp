@@ -1,0 +1,168 @@
+{
+  "name":"VMs Created and Deleted v2",
+  "namespace":"com.broadcom",
+  "contentPackId":"com.broadcom",
+  "framework":"#9c4",
+  "version":"2.4",
+  "extractedFields":[ {
+    "displayName":"vmw_vc_task_type",
+    "preContext":"task: ",
+    "postContext":"$",
+    "regexValue":".*",
+    "internalName":"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000",
+    "constraints":"{\"filters\":[{\"internalName\":\"appname\",\"displayName\":\"appname\",\"operator\":\"CONTAINS\",\"value\":\"vcenter-server\",\"fieldType\":\"NUMBER\",\"isExtracted\":false,\"hidden\":false}]}",
+    "info":null
+  } ],
+  "queries":[ ],
+  "alerts":[ ],
+  "dashboardSections":[ {
+    "views":[ {
+      "name":"VMs Created and Deleted v2",
+      "constraints":[ ],
+      "rows":[ {
+        "widgets":[ {
+          "name":"VMs Created/Cloned and Deleted Over Time",
+          "info":"",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1735711200000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"virtual machine\"},{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"migrate,reconfigure,relocate,reset,hard stop,rename,snapshot,power,consolidate,delete\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.vim25.TaskEvent\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_task_type\",\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs Deleted Over Time",
+          "info":"",
+          "chartType":"column",
+          "chartOptions":"{\"logaxis\":false,\"legend\":true,\"stacking\":\"normal\",\"spline\":false}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1735711200000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":true,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"virtual machine\"},{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"delete virtual machine\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.vim25.TaskEvent\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vmw_vc_task_type\",\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"displayNamespace\":\"Unknown\",\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VMs Cloned/Created",
+          "info":"",
+          "chartType":null,
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1735711200000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"virtual machine\"},{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"migrate,reconfigure,relocate,reset,hard stop,rename,snapshot,power,clone,consolidate\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.vim25.TaskEvent\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"Cloned/Created VMs by User",
+          "info":"",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1735711200000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"virtual machine\"},{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"DOES_NOT_CONTAIN\",\"value\":\"migrate,reconfigure,relocate,reset,hard stop,rename,snapshot,power,clone,consolidate\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.vim25.TaskEvent\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vc_username\",\"internalName\":\"vc_username\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs Deleted",
+          "info":"",
+          "chartType":"scalar-value",
+          "chartOptions":"{\"fourranges\":{\"ranges\":[\"\",\"\",\"\",\"\"]}}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1735711200000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"virtual machine\"},{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"delete virtual machine\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.vim25.TaskEvent\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        }, {
+          "name":"VMs Deleted by User",
+          "info":"",
+          "chartType":"number",
+          "chartOptions":"{\"logaxis\":false,\"pielabelstyle\":\"legend\",\"piepercentage\":false,\"piestyle\":\"normal\"}",
+          "widgetType":"chart",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1735711200000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ALL\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"virtual machine\"},{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"delete virtual machine\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.vim25.TaskEvent\"}],\"supplementalConstraints\":[],\"groupByFields\":[{\"displayName\":\"vc_username\",\"internalName\":\"vc_username\",\"displayNamespace\":null,\"numericGroupByType\":\"EACH_VALUE\",\"numericGroupByValue\":null}],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":""
+        } ]
+      }, {
+        "widgets":[ {
+          "name":"VMs Cloned/Created",
+          "info":"",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1735711200000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"EVENTS\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"clone virtual machine,create virtual machine\"},{\"internalName\":\"vc_event_type\",\"operator\":\"CONTAINS\",\"value\":\"com.vmware.vim25.VmCreatedEvent\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_timestamp_col",
+            "displayName":"__li_timestamp_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"__li_msg_col",
+            "displayName":"__li_msg_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"vmw_vcenter",
+            "displayName":"vmw_vcenter",
+            "displayNamespace":null
+          }, {
+            "internalName":"vmw_cluster",
+            "displayName":"vmw_cluster",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_vm_name",
+            "displayName":"vc_vm_name",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_username",
+            "displayName":"vc_username",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_event_type",
+            "displayName":"vc_event_type",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_event_obj_type",
+            "displayName":"vc_event_obj_type",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_event_obj_id",
+            "displayName":"vc_event_obj_id",
+            "displayNamespace":null
+          }, {
+            "internalName":"__li_source_path",
+            "displayName":"source",
+            "displayNamespace":null
+          } ]
+        }, {
+          "name":"Deleted VMs",
+          "info":"",
+          "chartType":null,
+          "chartOptions":null,
+          "widgetType":"fieldTable",
+          "chartQuery":"{\"query\":\"\",\"startTimeMillis\":1735711200000,\"endTimeMillis\":1744996803534,\"piqlFunctionGroups\":[{\"functions\":[{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false}],\"field\":null}],\"dateFilterPreset\":\"CUSTOM\",\"shouldGroupByTime\":false,\"includeAllContentPackFields\":true,\"eventSortOrder\":\"DESC\",\"summarySortOrder\":\"DESC\",\"compareQueryOrderBy\":\"TREND\",\"compareQuerySortOrder\":\"DESC\",\"compareQueryOptions\":null,\"messageViewType\":\"FIELD_TABLE\",\"constraintToggle\":\"ANY\",\"piqlFunction\":{\"label\":\"Count\",\"value\":\"COUNT\",\"requiresField\":false,\"numericOnly\":false},\"piqlFunctionField\":null,\"fieldConstraints\":[{\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"operator\":\"CONTAINS\",\"value\":\"delete virtual machine*\"}],\"supplementalConstraints\":[],\"groupByFields\":[],\"contentPacksToIncludeFields\":[],\"extractedFields\":[{\"displayName\":\"vmw_vc_task_type\",\"preContext\":\"task: \",\"postContext\":\"$\",\"regexValue\":\".*\",\"internalName\":\"ibadcms7mnxw2ltcojxwczddn5wxm3lxl53ggx3umfzwwx3upfygk000\",\"constraints\":\"{\\\"filters\\\":[{\\\"internalName\\\":\\\"appname\\\",\\\"displayName\\\":\\\"appname\\\",\\\"operator\\\":\\\"CONTAINS\\\",\\\"value\\\":\\\"vcenter-server\\\",\\\"fieldType\\\":\\\"NUMBER\\\",\\\"isExtracted\\\":false,\\\"hidden\\\":false}]}\"}]}",
+          "messageQuery":"",
+          "columns":[ {
+            "internalName":"__li_timestamp_col",
+            "displayName":"__li_timestamp_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"__li_msg_col",
+            "displayName":"__li_msg_col",
+            "displayNamespace":null
+          }, {
+            "internalName":"vmw_vcenter",
+            "displayName":"vmw_vcenter",
+            "displayNamespace":null
+          }, {
+            "internalName":"vmw_cluster",
+            "displayName":"vmw_cluster",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_username",
+            "displayName":"vc_username",
+            "displayNamespace":null
+          }, {
+            "internalName":"vc_event_obj_id",
+            "displayName":"vc_event_obj_id",
+            "displayNamespace":null
+          } ]
+        } ]
+      } ],
+      "itemUuid":"64ac93b9-5167-3242-a9d8-956c5a31d26d"
+    } ],
+    "header":""
+  } ],
+  "aliasFields":[ ],
+  "aliasRules":[ ],
+  "author":"Brock Peterson",
+  "url":"brockpeterson.com",
+  "contentVersion":"1.0"
+}
